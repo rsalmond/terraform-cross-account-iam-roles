@@ -10,6 +10,6 @@ variable "write_capacity" {
   description = "DDB write capacity to provision."
 }
 
-variable "team_b_role" {
+variable "role_which_will_assume" {
   description = "The ARN of the role provided by Team B which will be granted access to assume our IAM role."
 }

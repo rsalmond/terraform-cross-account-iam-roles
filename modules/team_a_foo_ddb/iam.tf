@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "foo-assume-role" {
 
     principals {
       type        = "AWS"
-      identifiers = ["${var.team_b_role}"]
+      identifiers = ["${var.role_which_will_assume}"]
     }
   }
 }
