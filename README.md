@@ -21,7 +21,7 @@ You can basically think of a trust policy as "indicator of an external thing tha
 
 ### How?
 
-Why [Terraform](https://www.terraform.io/) of course! And a few other odds and ends. These examples assume you are making use of an [aws credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html) and that you have a [named profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) for both accounts.
+[Terraform](https://www.terraform.io/) of course! And a few other odds and ends. These examples assume you are making use of an [aws credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html) and that you have a [named profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) for both accounts.
 
 Eg.
 
@@ -38,3 +38,12 @@ aws_access_key_id = AKIA<...............>
 aws_secret_access_key = entropyentropyentropyentropyentropyentro
 region=us-east-1
 ```
+
+### Running
+
+There are a few more steps required than you might initially think to get this cross account relationship set up, due to a little chicken-and-egg problem. We need to create an IAM role in account A which has a [trust policy] that refers to another IAM role in account B that doesn't exist yet. And we want to [limit] the role in account B to only be able to assume the role provided by account A, which also doesn't exist yet.
+
+
+### Further Reading
+
+If you are creating a role which will assume multiple roles in multiple AWS accounts you should read about [external IDs](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html).
