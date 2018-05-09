@@ -1,4 +1,4 @@
 provider "aws" {
-  profile = "personal"
+  profile = "account_b"
   region  = "us-west-2"
 }
