@@ -3,5 +3,6 @@ module "ddb_module" "foo_ddb" {
   table_name     = "TestTable"
   read_capacity  = "5"
   write_capacity = "5"
-  team_b_role    = ""
+  //TODO: use dummy acct no
+  team_b_role    = "arn:aws:iam::703091623098:root"
 }

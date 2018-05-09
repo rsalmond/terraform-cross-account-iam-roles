@@ -1,8 +1,9 @@
-//This is the actual policy you want to grant the other account access to use.
+//This is the actual policy you want to grant the other account access to use. This
+// should be as restrictive as possible.
 data "aws_iam_policy_document" "foo" {
   statement {
     actions = [
-      "dynamodb:*",
+      "dynamodb:PutItem",
     ]
 
     resources = [
